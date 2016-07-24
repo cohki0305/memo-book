@@ -3,8 +3,15 @@ class MemosController < ApplicationController
     @memo = current_user.memos.build
   end
 
+  def index
+    @memos = current_user.memos.all
+  end
+
   def create
     @memo = current_user.memos.build(memo_params)
+    if @memo.save 
+      redirect_to root_path
+    end
   end
 
   private

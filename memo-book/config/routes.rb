@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
+  get 'memos/new' => 'memos#new' , as: 'new_memo'
+  post 'memos/created' => 'memos#create', as: 'create_memo'
+  get 'memos' => 'memos#index', as: 'all_memos'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

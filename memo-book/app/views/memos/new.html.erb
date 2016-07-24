@@ -1,0 +1,9 @@
+<%= form_for(@memo, url:create_memo_path)  do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title%>
+
+  <%= f.label :detail%>
+  <%= f.text_field :detail%>
+
+  <%=f.submit %>
+<% end %>
